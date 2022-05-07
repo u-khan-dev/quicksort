@@ -1,0 +1,17 @@
+QUICKSORT(A, x, z)
+	if x < z
+		then p ← PARTITION(A, x, z)
+		  QUICKSORT(A, x, p - 1)
+		  QUICKSORT(A, p + 1, z)
+
+
+PARTITION(A, x, z)
+  p ← A[z]
+  i ← x - 1
+
+  for j ← x to z
+    do if A[j] <= p
+			then i ← i + 1
+			  exchange A[i] ⟷ A[j]
+
+  return i + 1
